@@ -22,3 +22,5 @@ UWP练手项目，支持分栏视图的UWP资源管理器。
 - 越写下去发现资源管理器对性能要求不低，功能繁杂，目前水平难以优化。
 
 我对继续开发本项目已失去兴趣，已弃坑，最后编译SDK版本：10586。
+
+![Visual-Explorer](http://yukiyuna-blog.oss-cn-hongkong.aliyuncs.com/Images/projects/Visual%20Explorer/VisualExplorer.png)
