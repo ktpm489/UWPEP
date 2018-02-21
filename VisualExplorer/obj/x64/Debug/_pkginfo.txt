@@ -1,0 +1,1 @@
+E:\Visual Studio Workspace\UWP\VisualExplorer\VisualExplorer\AppPackages\VisualExplorer_1.0.0.0_x64_Debug_Test\VisualExplorer_1.0.0.0_x64_Debug.appx

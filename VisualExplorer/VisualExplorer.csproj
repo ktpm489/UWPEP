@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{1A3DFE24-6AE1-4BC7-895A-C65D093A1E6D}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VisualExplorer</RootNamespace>
+    <AssemblyName>VisualExplorer</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.16190.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10563.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>VisualExplorer_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Format\BtyesFormatter.cs" />
+    <Compile Include="Framework\Format\FSizeFixer.cs" />
+    <Compile Include="Framework\Foundation\BindableBase.cs" />
+    <Compile Include="Framework\Foundation\ObservableExtension.cs" />
+    <Compile Include="Framework\Seralization\FJSONHelper.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AddressBar\MAddressModel.cs" />
+    <Compile Include="Model\Dialog\MDialogAgency.cs" />
+    <Compile Include="Model\Navigation\MAccessAgency.cs" />
+    <Compile Include="Model\Navigation\MFolderLocationAgency.cs" />
+    <Compile Include="Model\Navigation\MNavigationInfo.cs" />
+    <Compile Include="Model\Navigation\MPathAccessItem.cs" />
+    <Compile Include="Model\Preference\PreferenceAgency.cs" />
+    <Compile Include="Model\Preference\PreferenceItem.cs" />
+    <Compile Include="Model\Preview\IPrevisualProtocol.cs" />
+    <Compile Include="Model\Preview\MPrevisualImage.cs" />
+    <Compile Include="Model\Preview\PreviewPanelClient.cs" />
+    <Compile Include="Model\Storage\IFieldPage.cs" />
+    <Compile Include="Model\Storage\SEContentAgency.cs" />
+    <Compile Include="Model\Storage\SEExcuteAgency.Copy.cs" />
+    <Compile Include="Model\Storage\SEExcuteAgency.cs" />
+    <Compile Include="Model\Storage\SEExcuteAgency.Launch.cs" />
+    <Compile Include="Model\Storage\SEFolderAgency.cs" />
+    <Compile Include="Model\Storage\StorageEntry.cs" />
+    <Compile Include="Model\Theme\ThemeAgency.cs" />
+    <Compile Include="Model\Utility\TimerMonitor.cs" />
+    <Compile Include="Model\ViewFixer\IViewFixer.cs" />
+    <Compile Include="Model\ViewFixer\TilesFieldFixer.cs" />
+    <Compile Include="Model\MWindow\WindowAdministrator.cs" />
+    <Compile Include="Pages\Base\BaseField.cs" />
+    <Compile Include="Pages\Base\ThemePage.cs" />
+    <Compile Include="Pages\Fields\Tiles\TileItemContentPanel.xaml.cs">
+      <DependentUpon>TileItemContentPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fields\Tiles\TilesField.IFieldPage.cs" />
+    <Compile Include="Pages\Fields\Tiles\TilesField.IFLServiceClient.cs" />
+    <Compile Include="Pages\Fields\Tiles\TilesField.xaml.cs">
+      <DependentUpon>TilesField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fields\Tiles\TilesFieldView.cs" />
+    <Compile Include="Pages\PageAccessContent.xaml.cs">
+      <DependentUpon>PageAccessContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageFieldContainer.xaml.cs">
+      <DependentUpon>PageFieldContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Preference\PagePreference.xaml.cs">
+      <DependentUpon>PagePreference.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\RConstants.cs" />
+    <Compile Include="Resources\RIdentifiers.cs" />
+    <Compile Include="Resources\RPromptBarMessage.cs" />
+    <Compile Include="UI\Controls\UIFieldAddressBar.xaml.cs">
+      <DependentUpon>UIFieldAddressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\UIFieldPromptBar.xaml.cs">
+      <DependentUpon>UIFieldPromptBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\UIPreviewPanel.xaml.cs">
+      <DependentUpon>UIPreviewPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\UIWaitDialog.xaml.cs">
+      <DependentUpon>UIWaitDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrevisualView\UIPrevisualGeneric.xaml.cs">
+      <DependentUpon>UIPrevisualGeneric.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrevisualView\UIPrevisualImage.xaml.cs">
+      <DependentUpon>UIPrevisualImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrevisualView\UIPrevisualMedia.xaml.cs">
+      <DependentUpon>UIPrevisualMedia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrevisualView\UIPrevisualText.xaml.cs">
+      <DependentUpon>UIPrevisualText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\ThemeContentDialog.cs" />
+    <Compile Include="UI\Dialogs\UIMultiplyOptionDialog.xaml.cs">
+      <DependentUpon>UIMultiplyOptionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrevisualView\UIPrevisualView.xaml.cs">
+      <DependentUpon>UIPrevisualView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewFix\TilesFieldFixerPanel.xaml.cs">
+      <DependentUpon>TilesFieldFixerPanel.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="VisualExplorer_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\IMAGE\IMAGE_DISK.png" />
+    <Content Include="Assets\IMAGE\IMAGE_TAG.png" />
+    <Content Include="Assets\THUMB\File_Medium.png" />
+    <Content Include="Assets\THUMB\File_Small.png" />
+    <Content Include="Assets\THUMB\Folder_Medium.png" />
+    <Content Include="Assets\THUMB\Folder_Small.png" />
+    <Content Include="Assets\THUMB\Photo_Medium.png" />
+    <Content Include="Assets\THUMB\Photo_Small.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Fields\Tiles\TileItemContentPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Fields\Tiles\TilesField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageAccessContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageFieldContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Preference\PagePreference.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Theme\ThemeAgency.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Theme\CommentStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Theme\DarkTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Theme\LightTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="UI\Controls\UIFieldAddressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\UIFieldPromptBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\UIPreviewPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\UIWaitDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\PrevisualView\UIPrevisualGeneric.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\PrevisualView\UIPrevisualImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\PrevisualView\UIPrevisualMedia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\PrevisualView\UIPrevisualText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dialogs\UIMultiplyOptionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\PrevisualView\UIPrevisualView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ViewFix\TilesFieldFixerPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>5.2.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI">
+      <Version>1.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
+      <Version>1.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="winrtxamltoolkit">
+      <Version>2.3.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\ControlsTemplate\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

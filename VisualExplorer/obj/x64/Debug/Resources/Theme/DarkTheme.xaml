@@ -1,0 +1,69 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:fieldView="using:VisualExplorer.Pages.Fields.Tiles">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Resources/Theme/CommentStyle.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <SolidColorBrush x:Key="DefaultSolidBackground" Color="#2C2C2C"/>
+    <SolidColorBrush x:Key="FontColor" Color="#F9F9F9"/>
+    <SolidColorBrush x:Key="CommonForeground" Color="#FCFCFC"/>
+    <SolidColorBrush x:Key="CommonDeepForeGround" Color="#E1E1E1"/>
+    <SolidColorBrush x:Key="FieldBorderBursh" Color="#F9F9F9"/>
+
+    <AcrylicBrush x:Key="MainTitleBarArylicBackground"
+                  BackgroundSource="HostBackdrop"
+                  TintColor="#1B1B1B"
+                  TintOpacity="0.8"
+                  FallbackColor="#252525"/>
+    <AcrylicBrush x:Key="DefaultAcrylicBackground"
+                  BackgroundSource="HostBackdrop"
+                  TintColor="#FF3D4147"
+                  TintOpacity="0.8"
+                  FallbackColor="#FF414040"/>
+    <AcrylicBrush x:Key="DefaultAcrylicBackground2"
+                  BackgroundSource="HostBackdrop"
+                  TintColor="#FF26282B"
+                  TintOpacity="0.8"
+                  FallbackColor="#FF383838"/>
+
+    <!-- TextBlock -->
+    <Style x:Key="TTextBlock" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource FontColor}"/>
+    </Style>
+
+    <!-- Radio Button -->
+    <Style x:Key="TRadioButton" TargetType="RadioButton">
+        <Setter Property="Foreground" Value="{StaticResource CommonForeground}"/>
+    </Style>
+
+
+    <!-- TilesFieldView Style -->
+    <!-- /////////////////////////////////////////////// -->
+    <Style x:Key="TilesFieldViewStyle" TargetType="fieldView:TilesFieldView"
+           BasedOn="{StaticResource CommentFieldViewStyle}">
+        <Setter Property="BorderBrush" Value="{StaticResource CommonForeground}"/>
+    </Style>
+    <!-- /////////////////////////////////////////////// -->
+
+
+    <!-- Address Bar Item Style -->
+    <!-- /////////////////////////////////////////////// -->
+    <Style x:Key="AddressBarItemStyle" TargetType="ListViewItem">
+        <Setter Property="MinWidth" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+    <!-- /////////////////////////////////////////////// -->
+
+    <!-- Preview Panel -->
+    <!-- /////////////////////////////////////////////// -->
+    <Style x:Key="PreviewPanelLabelStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{ThemeResource CommonForeground}"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+    <!-- /////////////////////////////////////////////// -->
+
+</ResourceDictionary>
+

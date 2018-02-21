@@ -1,0 +1,81 @@
+﻿<local:BaseField x:ConnectionId='1'
+    x:Class="VisualExplorer.Pages.Fields.Tiles.TilesField"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VisualExplorer.Pages.Base"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+    mc:Ignorable="d"
+
+    xmlns:fieldView="using:VisualExplorer.Pages.Fields.Tiles"
+    xmlns:storage="using:VisualExplorer.Model.Storage"
+    xmlns:panel="using:VisualExplorer.Pages.Fields.Tiles"
+    xmlns:controls="using:VisualExplorer.UI.Controls"
+                        
+                            
+                                                               >
+    
+    <Page.Resources>
+        <MenuFlyout x:ConnectionId='2' x:Key="TileFlyoutMenu" x:Name="TileFlyoutName">
+            <MenuFlyoutItem x:ConnectionId='3' Tag="1" Text="Paste"                           />
+            <MenuFlyoutSeparator/>
+            <MenuFlyoutItem x:ConnectionId='4' Tag="2" Text="Refresh"                           />
+            <MenuFlyoutSeparator/>
+            <MenuFlyoutSubItem Text="New...">
+                <MenuFlyoutItem x:ConnectionId='6' Tag="3" Text="New File"                           />
+                <MenuFlyoutItem x:ConnectionId='7' Tag="4" Text="New Folder"                           />
+            </MenuFlyoutSubItem>
+            <MenuFlyoutItem x:ConnectionId='5' Tag="5" Text="Explorer"                           />
+        </MenuFlyout>
+    </Page.Resources>
+    
+    <Grid Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <fieldView:TilesFieldView x:ConnectionId='8' x:Name="TilesView" Grid.Row="0" Canvas.ZIndex="1"
+                                                                
+                                  Style="{ThemeResource TilesFieldViewStyle}"
+                                                                                         
+                                                                                             
+                                  AllowDrop="True"                                                    
+                                  CanDrag="True"                                                
+                                                                                                           
+                                                                               >
+            <GridView.ItemTemplate>
+                <DataTemplate                                  >
+                    <panel:TileItemContentPanel x:Name="TileItem"/>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            <GridView.ItemContainerStyle>
+                <Style TargetType="GridViewItem">
+                    <Setter Property="CanDrag" Value="True"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="ContextFlyout">
+                        <Setter.Value>
+                            <MenuFlyout>
+                                <MenuFlyoutItem x:ConnectionId='10' Tag="1" Text="Open"                           />
+                                <MenuFlyoutItem x:ConnectionId='11' Tag="2" Text="New Window"                           />
+                                <MenuFlyoutSeparator/>
+                                <MenuFlyoutItem x:ConnectionId='12' Tag="3" Text="Copy"                           />
+                                <MenuFlyoutItem x:ConnectionId='13' Tag="4" Text="Rename"                           />
+                                <MenuFlyoutItem x:ConnectionId='14' Tag="5" Text="Delete"                           />
+                                <MenuFlyoutSeparator/>
+                                <MenuFlyoutItem x:ConnectionId='15' Tag="6" Text="Explorer"                           />
+                            </MenuFlyout>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </GridView.ItemContainerStyle>
+        </fieldView:TilesFieldView>
+        
+        <controls:UIFieldPromptBar x:ConnectionId='9' x:Name="PromptBar" Grid.Row="1" Canvas.ZIndex="2" Visibility="Collapsed"
+                                 VerticalAlignment="Stretch"/>
+    </Grid>
+
+
+</local:BaseField>
+

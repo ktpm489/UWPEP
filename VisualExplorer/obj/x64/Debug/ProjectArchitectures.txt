@@ -1,0 +1,1 @@
+E:\Visual Studio Workspace\UWP\VisualExplorer\VisualExplorer\VisualExplorer.csproj;x64

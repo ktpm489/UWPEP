@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>e:\visual studio workspace\uwp\visualexplorer\visualexplorer\resources\theme\lighttheme.xaml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\visual studio workspace\uwp\visualexplorer\visualexplorer\resources\theme\darktheme.xaml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>E:\Visual Studio Workspace\UWP\VisualExplorer\VisualExplorer\Pages\PageAccessContent.xaml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\visual studio workspace\uwp\visualexplorer\visualexplorer\pages\fields\tiles\tilesfield.ifieldpage.cs</string>
+      <string>e:\visual studio workspace\uwp\visualexplorer\visualexplorer\pages\fields\tiles\tilesfield.xaml</string>
+      <string>e:\visual studio workspace\uwp\visualexplorer\visualexplorer\pages\fields\tiles\tilesfield.xaml.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\visual studio workspace\uwp\visualexplorer\visualexplorer\framework\foundation\observableextension.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\visual studio workspace\uwp\visualexplorer\visualexplorer\model\dialog\mdialogagency.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\visual studio workspace\uwp\visualexplorer\visualexplorer\model\storage\ifieldpage.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\visual studio workspace\uwp\visualexplorer\visualexplorer\pages\base\basefield.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\visual studio workspace\uwp\visualexplorer\visualexplorer\model\storage\seexcuteagency.copy.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>E:\Visual Studio Workspace\UWP\VisualExplorer\VisualExplorer\MainPage.xaml</string>
+      <string>E:\Visual Studio Workspace\UWP\VisualExplorer\VisualExplorer\MainPage.xaml.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>E:\Visual Studio Workspace\UWP\VisualExplorer\VisualExplorer\App.xaml.cs</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+</ArrayOfArrayOfArrayOfString>

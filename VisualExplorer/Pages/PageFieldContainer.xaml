@@ -1,0 +1,101 @@
+﻿<local:ThemePage
+    x:Class="VisualExplorer.Pages.PageFieldContainer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VisualExplorer.Pages.Base"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Previsual="using:VisualExplorer.UI.PrevisualView"
+    mc:Ignorable="d"
+    
+    xmlns:viewFix="using:VisualExplorer.UI.ViewFix"
+    xmlns:controls="using:VisualExplorer.UI.Controls"
+    RequestedTheme="{x:Bind themeAgency.AppTheme, Mode=OneWay}">
+
+    <Page.Resources>
+        <Style x:Name="AppBarSytle" TargetType="AppBarButton">
+            <Setter Property="Foreground" Value="{ThemeResource CommonForeground}"/>
+        </Style>
+        <Style x:Name="FieldToggleBtnStyle" TargetType="ToggleButton">
+            <Setter Property="Foreground" Value="{ThemeResource CommonForeground}"/>
+            <Setter Property="FontFamily" Value="{StaticResource SymbolThemeFontFamily}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="IsThreeState" Value="False"/>
+            <Setter Property="IsChecked" Value="False"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource DefaultAcrylicBackground}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Previsual:UIPrevisualView x:Name="PrevisualView" 
+                                   Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="2"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
+        <CommandBar Grid.Column="0" Grid.Row="0" Background="Transparent" Foreground="{ThemeResource CommonForeground}">
+            <CommandBar.Content>
+                <StackPanel Orientation="Horizontal" Height="48">
+                    <AppBarButton Name="CBFolderBack" Icon="Back" Style="{StaticResource AppBarSytle}"/>
+                    <AppBarButton Name="CBFolderForward" Icon="Forward" Style="{StaticResource AppBarSytle}"/>
+                    <AppBarSeparator Foreground="{ThemeResource CommonDeepForeGround}"/>
+                    <AppBarButton Name="CBFolderParent" Icon="Up" Style="{StaticResource AppBarSytle}"/>
+                    <AppBarSeparator Foreground="{ThemeResource CommonDeepForeGround}"/>
+                    <AppBarButton Name="CBRefresh" Icon="Refresh" Style="{StaticResource AppBarSytle}"/>
+                </StackPanel>
+            </CommandBar.Content>
+
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Name="PreviewPanelToggleBtn" Icon="OpenPane" Style="{StaticResource AppBarSytle}"
+                              Click="PreviewPanelToggleBtn_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Height="48">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <controls:UIFieldAddressBar Grid.Column="0" x:Name="AddressBar" Margin="10,0,0,0"/>
+
+            <RelativePanel Grid.Column="1" HorizontalAlignment="Right">
+                <AutoSuggestBox Name="SearchBox" PlaceholderText="Search" HorizontalAlignment="Right" MinWidth="290" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="0,0,10,0"/>
+                <ToggleButton Name="GridFieldToggleBtn" Content="&#xE8A9;" Style="{StaticResource FieldToggleBtnStyle}" RelativePanel.LeftOf="SearchBox" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="0,0,10,0"
+                              Tag="GridField"/>
+                <ToggleButton Name="ColumnFieldToggleBtn" Content="&#xF168;" Style="{StaticResource FieldToggleBtnStyle}" RelativePanel.LeftOf="GridFieldToggleBtn" RelativePanel.AlignVerticalCenterWithPanel="True"
+                              Tag="ColumnField"/>
+            </RelativePanel>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Column="0" Name="FieldFrame" Margin="3,0,3,0" 
+                   BorderThickness="1" BorderBrush="{ThemeResource FieldBorderBursh}"
+                   Background="Transparent"/>
+            <Pivot Name="InfoPanel" Grid.Column="1" Width="300" Visibility="Collapsed" Background="{ThemeResource DefaultSolidBackground}">
+                <PivotItem Header="PreviewPanel">
+                    <controls:UIPreviewPanel x:Name="PreviewPanel"/>
+                </PivotItem>
+                <PivotItem Header="Adjust View">
+                    <viewFix:TilesFieldFixerPanel/>
+                </PivotItem>
+            </Pivot>
+
+        </Grid>
+        <StackPanel Grid.Row="3" Height="5"/>
+    </Grid>
+</local:ThemePage>
